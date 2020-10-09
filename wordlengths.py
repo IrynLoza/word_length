@@ -38,6 +38,20 @@ split the string on whitespace::
 
 def word_lengths(sentence):
     """Get dictionary of word-length: {words}."""
+    #answer = word_lengths("cute cats chase fuzzy rats")
+    # This should return {4: {'cute', 'cats'}, 5: {'chase', 'fuzzy', 'rats'}}
+
+    sentence = sentence.split(' ')
+    sentence_data = {}
+    for word in sentence:
+        if len(word) not in sentence_data:
+            sentence_data[len(word)] = set()
+        sentence_data[len(word)].add(word)    
+
+    return sentence_data
+
+    
+
 
 
 if __name__ == '__main__':
